@@ -1,38 +1,142 @@
-.App {
+:root {
+  --flag-size: 150px;
+}
+body {
+  background-image: url(https://wallpapers.com/images/hd/blue-and-black-minimalist-world-map-bhr0x2vabhbkk2kg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+}
+.cardBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  width: 350px;
+  height: 295px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.countryName {
+  margin: 0;
+  font-weight: bold;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-text {
+  margin-left: 5px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 330px;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttonBox {
+  display: flex;
+  justify-content: center;
+}
+.buttonBox > button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.buttonBox > button:active {
+  scale: 0.95;
+}
+.Asia {
+  background-color: coral;
+}
+.Europe {
+  background-color: lightgreen;
+}
+.Africa {
+  background-color: gray;
+}
+.Oceania {
+  background-color: lightblue;
+}
+.Americas {
+  background-color: yellow;
+}
+.Antarctic {
+  background-color: rgb(218, 255, 255);
+}
+.sortBox {
+  display: flex;
+  width: 60vw;
+  justify-content: space-evenly;
+}
+.sortBox > button {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.sortBox > button:hover {
+  scale: 1.05;
+}
+.sortBox > button:active {
+  scale: 0.95;
+}
+.countrySearch {
+  margin-top: 25px;
+  margin-right: 60px;
+  scale: 1.5;
+  display: flex;
+  float: right;
+}
+.overlay {
+  height: 0;
+  position: sticky;
+  top: 0px;
+}
+.overlayDark {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.overlayDark > button {
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  font-size: 150%;
+  height: 35px;
+  width: 35px;
+}
+.overlayInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 100vh;
+  z-index: 150;
 }
-
-.App-link {
-  color: #61dafb;
+.overlayInfo > div {
+  width: calc(var(--flag-size) * 3);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.overlayInfo > div > div {
+  margin-left: 20px;
+}
+.overlayCountryName {
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+.overlayInfo > img {
+  width: calc(var(--flag-size) * 3);
+  height: calc(var(--flag-size) * 2);
 }
